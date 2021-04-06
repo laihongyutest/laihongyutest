@@ -6,7 +6,6 @@ import json
 
 import allure
 import pytest
-#测试测111
 from common.readfile import ReadFile
 from common.transfer import Trans
 
@@ -69,9 +68,9 @@ class Test:
             assert Trans().trans_text('，。/；‘1')['message'] != ''
 
 
-    # @allure.story('用户自己提交翻译')
-    # @allure.title('自己提交正常的翻译')
+    @allure.story('用户自己提交翻译')
+    @allure.title('自己提交正常的翻译')
     # def test_user_commit_tran(self):
-    #     with allure.step('提交正常的翻译'):
-    #         Trans().user_submit_trans('我是中国人','')
-    #     with allure.attach
+    #      with allure.step('提交正常的翻译'):
+    #          Trans().user_submit_trans('我是中国人','')
+    #      with allure.attach
