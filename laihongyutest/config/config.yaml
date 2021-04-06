@@ -1,0 +1,32 @@
+#配置文件
+url: 'https://www.baidu.com'
+header:
+  content-type: 'application/json'
+  Authorization: 'token'
+account:
+  a_account: '13699999999'
+  b_account: '15689898989'
+  c_account: '13599999999'
+c_login:
+  method: post
+  url: '/user/login'
+  param:
+    type: '7'
+    login_from: '7'
+    telephone: '15689898989'
+    password: '123456'
+c_sms_code:
+  method: post
+  url: '/1.0/users/login'
+
+mysql:
+  host: 127.0.0.1
+  user: root
+  pwd: root
+  test_db: test_db
+
+MongoDB:
+  host: 127.0.0.1
+  user: test
+  pwd: test
+  test_db: user
