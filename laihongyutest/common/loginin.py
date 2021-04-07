@@ -9,7 +9,7 @@ from common.runmethod import Runmethod
 class Login_in():
     log = Log()
     def __init__(self):
-        self.yaml_data = ReadFile.read_yaml("yaml_path")
+        self.yaml_data = ReadFile().read_yaml("yaml_path")
         self.header = self.yaml_data["header"]
         self.url = self.yaml_data["url"]
         self.link_url = self.yaml_data["c_login"]["url"]
@@ -22,7 +22,6 @@ class Login_in():
         :param mobile:
         :return:
         """
-        url = self.url + self.link_url
         try:
             self.login_param["mobile"] = mobile
             result = Runmethod.run_main(self.login_method, url, self.login_param, self.header)
@@ -33,4 +32,4 @@ class Login_in():
 
 if __name__=="__main__":
     test_login=Login_in()
-    print(test_login)
+    print(test_login.c_longin_in("15288241132"))

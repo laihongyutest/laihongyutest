@@ -1,8 +1,11 @@
 # ！/usr/bin/env python
 # encoding:utf-8
 # 封装请求方法
+import json
+
 import requests
 
+from common.gobal import global_exc_var
 from common.log import Log
 
 
@@ -17,16 +20,16 @@ class Runmethod():
         else:
             res = requests.get(url=url, headers=header)
             print(res.status_code)
-        return res
+        return res.json()
 
     "封装post请求"
 
     def post_method(self, url, data, header=None):
         res = None
         if header != None:
-            res = requests.post(url=url, data=data, headers=header, verify=False)
+            res = requests.post(url=url, data=data, headers=header, verify=True)
         else:
-            res = requests.post(url=url, data=data, verify=False)
+            res = requests.post(url=url, data=data, verify=True)
         return res.json()
 
     "调用get/post方法"
@@ -48,6 +51,33 @@ class Runmethod():
 
 
 if __name__ == "__main__":
-    url = "https://www.baidu.com"
+    # url1 = ReadFile().read_yaml("yaml_path")['translate_url']
+    # url=url1+'/trans/word'
+    # url = "http://120.205.22.79:37785/koznak/yuandan/getUserIntegralInfo"
+    # data = {'uid': 'qq_92100537288580228181565666462', 'web_token': 'c8274491b18a4508b606372620390335',
+    #         'version': '8.1.0.android_Koznak_release'}
     run = Runmethod()
-    run.run_main("get", url)
+    url2 = 'https://api.sozman.shop:37741/getVerifyRecord'
+    data2 = {"time": "2021-01", "page": "1"}
+    print(run.run_main("get", url2, data2))
+    # a=run.run_main("get", url)
+    # b=a['code']
+    # c=a['message']
+    # print(b,type(b))
+    # print(c,type(c))
+    # header={"Content-Type": "application/json"}
+    # url2 = "https://api.sozman.shop:37741/trans/word"
+    # data = {"text": "ces"}
+    # a=run.run_main("POST", url2, data)
+    # b=a['code']
+    # c=a['message']
+    # print(b, type(b))
+    # print(c, type(c))
+    # print(run.run_main("POST", url2, data))
+    # url3 = "https://api.sozman.shop:37741//userTrans"
+    # data3 = {"src": "ceshias ", "tgt": "test111"}
+    # print(run.run_main("post", url3, data3, header=''))
+    # print(global_exc_var.Funciton,type(global_exc_var.Funciton))
+    # a= ["A","B"]
+    # url4=int(global_exc_var.Funciton)
+    # print(a[url4])

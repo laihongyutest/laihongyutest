@@ -1,5 +1,6 @@
 #配置文件
 url: 'https://www.baidu.com'
+translate_url: 'https://api.sozman.shop:37741'
 header:
   content-type: 'application/json'
   Authorization: 'token'
@@ -20,13 +21,31 @@ c_sms_code:
   url: '/1.0/users/login'
 
 mysql:
-  host: 127.0.0.1
-  user: root
-  pwd: root
-  test_db: test_db
-
+  test:
+    host: 127.0.0.1
+    user: root
+    pwd: root
+    test_db: test_db
+  tranlate:
+    host: 192.168.15.232
+    user: root
+    pwd:  123456
+    test_db: translate
+  activity:
+    host: 192.168.12.131
+    user: root
+    pwd:  111111
+    test_db: activity
 MongoDB:
   host: 127.0.0.1
   user: test
   pwd: test
   test_db: user
+trans:
+  method: post
+  url: '/trans/word'
+  param:
+    text: 'CESHI'
+
+
+
