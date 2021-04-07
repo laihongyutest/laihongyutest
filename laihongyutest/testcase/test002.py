@@ -11,14 +11,14 @@ class Test(object):
     @allure.story('测试第二步')
     @allure.title('用例名称1')
     def test3(self, get_token):
-        token = '2qeehfjejwjwjej11sss@22'
+        token = 'qeehfjejwjwjej11sss@22'
         print("【执行test03.py-Test类-test3用例,获取get_token：%s】" % get_token)
         assert get_token == token
 
     @allure.feature('验证token2')
     @allure.title('用例名称2')
     def test4(self, get_token):
-        token = '2qeehfjejwjwjej11sss@22'
+        token = 'qeehfjejwjwjej11sss@22'
         print("【执行test03.py-Test类-test4用例,获取get_token：%s】" % get_token)
         assert get_token == token
 
