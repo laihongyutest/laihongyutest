@@ -54,18 +54,18 @@ class Test:
         with allure.step('断言message'):
             assert Trans().trans_text('I LOVE U')['message'] != ''
 
-    @allure.story("直接翻译")
-    @allure.title("翻译符号")
-    def test_commit_trans4(self):
-        with allure.step('特殊符号翻译'):
-            Trans().trans_text("，。/；‘1")
-            allure.attach(str(Trans().trans_text('，。/；‘1')), '返回的请求内容', allure.attachment_type.JSON)
-        with allure.step('断言code'):
-            assert Trans().trans_text('，。/；‘1')['code'] == 1001
-        with allure.step('断言data'):
-            assert Trans().trans_text('，。/；‘1')['data'] != ''
-        with allure.step('断言message'):
-            assert Trans().trans_text('，。/；‘1')['message'] != ''
+    # @allure.story("直接翻译")
+    # @allure.title("翻译符号")
+    # def test_commit_trans4(self):
+    #     with allure.step('特殊符号翻译'):
+    #         Trans().trans_text("，。/；‘1")
+    #         allure.attach(str(Trans().trans_text('，。/；‘1')), '返回的请求内容', allure.attachment_type.JSON)
+    #     with allure.step('断言code'):
+    #         assert Trans().trans_text('，。/；‘1')['code'] == 1001
+    #     with allure.step('断言data'):
+    #         assert Trans().trans_text('，。/；‘1')['data'] != ''
+    #     with allure.step('断言message'):
+    #         assert Trans().trans_text('，。/；‘1')['message'] != ''
 
 
     # @allure.story('用户自己提交翻译')
